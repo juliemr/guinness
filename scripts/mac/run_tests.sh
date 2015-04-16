@@ -9,16 +9,9 @@ pub install
 
 
 echo ------------
-echo Running Specs DartVM
+echo Running Specs Dartium
 echo ------------
-./node_modules/karma/bin/karma start --single-run --browsers Dartium
-
-
-echo -------------------
-echo Karma-JS
-echo -------------------
-./node_modules/karma/bin/karma start --single-run --browsers PhantomJS
-
+pub run test:test test/html/ -p dartium
 
 echo ------------
 echo Cleanup
