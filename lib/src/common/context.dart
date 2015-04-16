@@ -36,7 +36,6 @@ class Context {
   }
 
   void addDescribe(String name, Function fn, {bool excluded, bool exclusive}) {
-    print('*** addDescribe');
     final describe = new Describe(name, currentDescribe, this, fn,
         excluded: excluded, exclusive: exclusive);
     currentDescribe.add(describe);
