@@ -44,7 +44,7 @@ main() {
       expect(null).toBeNull();
       expect("not null").toBeNotNull();
 
-      expect(2).not.toEqual(2);
+      expect(2).not.toEqual(1);
 
       expect([1, 2]).not.toContain(3);
 
