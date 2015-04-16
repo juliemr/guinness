@@ -1,7 +1,7 @@
 library guinness.test.suit_info_test;
 
 import 'package:guinness/guinness.dart' as guinness;
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 
 import '../test_utils.dart';
 

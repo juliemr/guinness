@@ -1,7 +1,7 @@
 library guinness.test.syntax_test;
 
 import 'package:guinness/guinness.dart' as guinness;
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 
 void main() {
   var context;

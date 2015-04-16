@@ -1,7 +1,7 @@
 library guinness.test.common_tests;
 
 import 'package:guinness/guinness.dart';
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 
 import 'common/exclusive_visitor_test.dart' as exclusive_visitor;
 import 'common/integration_test.dart' as integration;

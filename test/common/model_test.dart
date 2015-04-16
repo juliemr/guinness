@@ -3,7 +3,7 @@ library guinness.test.model_test;
 import 'dart:async';
 
 import 'package:guinness/guinness.dart' as guinness;
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 
 import '../test_utils.dart';
 
