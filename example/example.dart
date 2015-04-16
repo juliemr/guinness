@@ -1,12 +1,13 @@
 library example;
 
-import 'package:guinness/guinness_html.dart';
-import 'dart:html';
+// import 'package:guinness/guinness_html.dart';
+import 'package:guinness/guinness.dart';
+// import 'dart:html';
 
 class TestClass {}
 
 main() {
-  guinnessEnableHtmlMatchers();
+  // guinnessEnableHtmlMatchers();
 
   describe("guinness", () {
     it("has various built-in matchers", () {
@@ -56,35 +57,35 @@ main() {
       expect(0).not.toBeGreaterThan(1);
       expect(1.234).not.toBeCloseTo(1.23, 3);
 
-      expect(new DocumentFragment.html("<div>some html</div>"))
-          .toHaveHtml("<div>some html</div>");
+      // expect(new DocumentFragment.html("<div>some html</div>"))
+      //     .toHaveHtml("<div>some html</div>");
 
-      expect(new DocumentFragment.html("<div>some text</div>"))
-          .toHaveText("some text");
+      // expect(new DocumentFragment.html("<div>some text</div>"))
+      //     .toHaveText("some text");
 
-      expect(new DivElement()..classes.add('abc')).toHaveClass("abc");
+      // expect(new DivElement()..classes.add('abc')).toHaveClass("abc");
 
-      expect(new DivElement()..attributes['attr'] = 'value')
-          .toHaveAttribute("attr");
+      // expect(new DivElement()..attributes['attr'] = 'value')
+      //     .toHaveAttribute("attr");
 
-      expect(new DocumentFragment.html("<div>some html</div>")).not
-          .toHaveHtml("<div>some other html</div>");
+      // expect(new DocumentFragment.html("<div>some html</div>")).not
+      //     .toHaveHtml("<div>some other html</div>");
 
-      expect(new DocumentFragment.html("<div>some text</div>")).not
-          .toHaveText("some other text");
+      // expect(new DocumentFragment.html("<div>some text</div>")).not
+      //     .toHaveText("some other text");
 
-      expect(new DivElement()..classes.add('abc')).not.toHaveClass("def");
+      // expect(new DivElement()..classes.add('abc')).not.toHaveClass("def");
 
-      expect(new DivElement()..attributes['attr'] = 'value').not
-          .toHaveAttribute("other-attr");
+      // expect(new DivElement()..attributes['attr'] = 'value').not
+      //     .toHaveAttribute("other-attr");
 
-      final select = new SelectElement();
-      select.children
-        ..add(new OptionElement(value: "1"))
-        ..add(new OptionElement(value: "2", selected: true))
-        ..add(new OptionElement(value: "3"));
+      // final select = new SelectElement();
+      // select.children
+      //   ..add(new OptionElement(value: "1"))
+      //   ..add(new OptionElement(value: "2", selected: true))
+      //   ..add(new OptionElement(value: "3"));
 
-      expect(select).toEqualSelect(["1", ["2"], "3"]);
+      // expect(select).toEqualSelect(["1", ["2"], "3"]);
     });
 
     describe("spy", () {
