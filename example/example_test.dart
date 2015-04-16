@@ -8,6 +8,7 @@ class TestClass {}
 
 main() {
   // guinnessEnableHtmlMatchers();
+  print('foobar?');
 
   describe("guinness", () {
     it("has various built-in matchers", () {
@@ -43,7 +44,7 @@ main() {
       expect(null).toBeNull();
       expect("not null").toBeNotNull();
 
-      expect(2).not.toEqual(1);
+      expect(2).not.toEqual(2);
 
       expect([1, 2]).not.toContain(3);
 
@@ -163,4 +164,5 @@ main() {
 
     //also supports ddescribe, and iit
   });
+ guinness.initSpecs();
 }

@@ -16,6 +16,7 @@ class UnitTestVisitor implements SpecVisitor {
   UnitTestVisitor(this.initializedSpecs, {this.unit: const UnitTestAdapter()});
 
   void visitSuite(Suite suite) {
+
     final v = new ExclusiveVisitor();
     v.visitSuite(suite);
 

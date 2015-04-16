@@ -16,6 +16,7 @@ class UnitTestVisitor implements SpecVisitor {
   UnitTestVisitor(this.initializedSpecs, {this.unit: const UnitTestAdapter()});
 
   void visitSuite(Suite suite) {
+    print('**** visitSuite');
     final v = new ExclusiveVisitor();
     v.visitSuite(suite);
 
@@ -25,6 +26,7 @@ class UnitTestVisitor implements SpecVisitor {
 
   void visitDescribe(Describe describe) {
     _once(describe, () {
+      print('**** visitDescribe');
       if (describe.excluded) return;
 
       if (describe.exclusive && !containsExclusiveIt) {
@@ -40,12 +42,15 @@ class UnitTestVisitor implements SpecVisitor {
   }
 
   void visitIt(It it) {
+    print('**** visitIt');
     _once(it, () {
+      print('***** visitIt _once');
       if (it.excluded) return;
 
       if (it.exclusive) {
         unit.solo_test(it.name, it.withSetupAndTeardown);
       } else {
+        print('*** unit.test: ' + it.name);
         unit.test(it.name, it.withSetupAndTeardown);
       }
     });
@@ -338,11 +343,13 @@ class IsInstanceOf extends unit.Matcher {
 Set _initializedSpecs = new Set();
 
 void unitTestInitSpecs(Suite suite) {
+  print('**** in unitTestInitSpecs');
   var r = new UnitTestVisitor(_initializedSpecs);
   suite.visit(r);
 }
 
 void unitTestRunner(Suite suite) {
+  print('**** in unitTestRunner fn');
   unitTestInitSpecs(suite);
   unit.runTests();
 }

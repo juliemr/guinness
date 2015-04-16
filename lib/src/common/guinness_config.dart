@@ -36,8 +36,9 @@ class Guinness {
   SuiteInfo suiteInfo() => _suiteInfo(_context.suite);
 
   void _scheduleAutoInit() {
-    async.scheduleMicrotask(() {
-      if (autoInit) initSpecs();
-    });
+    // initSpecs();
+    // async.scheduleMicrotask(() {
+    //   if (autoInit) initSpecs();
+    // });
   }
 }
